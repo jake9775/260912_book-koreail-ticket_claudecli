@@ -1,0 +1,5 @@
+korail2==0.4.0
+pycryptodome
+keyring
+requests
+python-dotenv

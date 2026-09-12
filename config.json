@@ -1,0 +1,58 @@
+{
+  "adult_count": 1,
+  "seat_option": "GENERAL_FIRST",
+  "search_groups": [
+    {
+      "id": "0925_dongtan_iksan",
+      "label": "9/25 동탄→익산",
+      "date": "20260925",
+      "dep": "동탄",
+      "arr": "익산",
+      "targets": [
+        { "dep_time": "142600", "label": "9/25 동탄→익산 14:26" }
+      ]
+    },
+    {
+      "id": "0925_cheonanasan_yeocheon",
+      "label": "9/25 천안아산→여천",
+      "date": "20260925",
+      "dep": "천안아산",
+      "arr": "여천",
+      "targets": [
+        { "dep_time": "171800", "label": "9/25 천안아산→여천 17:18" }
+      ]
+    },
+    {
+      "id": "0927_yeocheon_iksan",
+      "label": "9/27 여천→익산",
+      "date": "20260927",
+      "dep": "여천",
+      "arr": "익산",
+      "targets": [
+        { "dep_time": "084800", "label": "9/27 여천→익산 08:48" }
+      ]
+    },
+    {
+      "id": "0927_iksan_dongtan",
+      "label": "9/27 익산→동탄",
+      "date": "20260927",
+      "dep": "익산",
+      "arr": "동탄",
+      "targets": [
+        { "dep_time": "104100", "label": "9/27 익산→동탄 10:41" },
+        { "dep_time": "132700", "label": "9/27 익산→동탄 13:27" }
+      ]
+    },
+    {
+      "id": "0927_iksan_suwon",
+      "label": "9/27 익산→수원",
+      "date": "20260927",
+      "dep": "익산",
+      "arr": "수원",
+      "targets": [
+        { "dep_time": "104600", "label": "9/27 익산→수원 10:46" },
+        { "dep_time": "114400", "label": "9/27 익산→수원 11:44" }
+      ]
+    }
+  ]
+}
