@@ -17,6 +17,11 @@ def _time_minus_minutes(hhmmss: str, minutes: int) -> str:
     return t.strftime("%H%M%S")
 
 
+def _normalize_train_no(value) -> str:
+    """열차번호 비교용 정규화. 앞의 0은 무시한다 (예: '0612' == '612')."""
+    return str(value).lstrip("0") or "0"
+
+
 class KorailClient:
     """코레일 로그인 세션을 유지하며 조건별 조회/예약을 수행한다."""
 
@@ -53,6 +58,21 @@ class KorailClient:
 
         for train in trains:
             if train.dep_time == target["dep_time"]:
+                accepted_train_no = target.get("train_no")
+                if accepted_train_no:
+                    accepted_list = (
+                        accepted_train_no
+                        if isinstance(accepted_train_no, list)
+                        else [accepted_train_no]
+                    )
+                    accepted_norm = {_normalize_train_no(v) for v in accepted_list}
+                    if _normalize_train_no(train.train_no) not in accepted_norm:
+                        return (
+                            "{}: 열차번호 불일치 (설정={}, 실제={})".format(
+                                STATUS_ERROR_PREFIX, accepted_train_no, train.train_no
+                            ),
+                            None,
+                        )
                 if train.has_seat():
                     return STATUS_AVAILABLE, train
                 return STATUS_SOLDOUT, None
